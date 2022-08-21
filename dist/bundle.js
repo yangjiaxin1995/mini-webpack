@@ -18,68 +18,59 @@
 
   require(0);
 })({
-  0: [
-    function (require, module, exports) {
-      'use strict';
+  
+    "0": [function (require, module, exports) {
+      "use strict";
 
-      var _foo = require('./foo.js');
+var _foo = require("./foo.js");
 
-      (0, _foo.foo)();
-      console.log('main.js');
-    },
-    { './foo.js': 1 },
-  ],
+var _user = require("./user.json");
 
-  1: [
-    function (require, module, exports) {
-      'use strict';
+var _user2 = _interopRequireDefault(_user);
 
-      Object.defineProperty(exports, '__esModule', {
-        value: true,
-      });
-      exports.foo = foo;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-      var _bar = require('./bar.js');
+console.log('user', _user2.default);
+(0, _foo.foo)();
+console.log('main.js');
+    }, {"./foo.js":1,"./user.json":2}],
+  
+    "1": [function (require, module, exports) {
+      "use strict";
 
-      var bar = _interopRequireWildcard(_bar);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.foo = foo;
 
-      function _interopRequireWildcard(obj) {
-        if (obj && obj.__esModule) {
-          return obj;
-        } else {
-          var newObj = {};
-          if (obj != null) {
-            for (var key in obj) {
-              if (Object.prototype.hasOwnProperty.call(obj, key))
-                newObj[key] = obj[key];
-            }
-          }
-          newObj.default = obj;
-          return newObj;
-        }
-      }
+var _bar = require("./bar.js");
 
-      function foo() {
-        bar();
-        console.log('foo.js');
-      }
-    },
-    { './bar.js': 2 },
-  ],
+function foo() {
+  (0, _bar.bar)();
+  console.log('foo.js');
+}
+    }, {"./bar.js":3}],
+  
+    "2": [function (require, module, exports) {
+      "use strict";
 
-  2: [
-    function (require, module, exports) {
-      'use strict';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = "{\r\n  \"name\": \"yjx\",\r\n  \"age\": \"27\"\r\n}\r\n";
+    }, {}],
+  
+    "3": [function (require, module, exports) {
+      "use strict";
 
-      Object.defineProperty(exports, '__esModule', {
-        value: true,
-      });
-      exports.bar = bar;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.bar = bar;
 
-      function bar() {
-        console.log('bar.js');
-      }
-    },
-    {},
-  ],
+function bar() {
+  console.log('bar.js');
+}
+    }, {}],
+  
 });
